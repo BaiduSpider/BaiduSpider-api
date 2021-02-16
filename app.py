@@ -20,7 +20,7 @@ spider = BaiduSpider()
 @app.route('/web')
 def search_web():
     query = request.args.get('query')
-    page = request.args.get('page', 1)
+    page = int(request.args.get('page', 1))
     return {
         'status': 'success',
         'results': spider.search_web(query, page)
@@ -30,7 +30,7 @@ def search_web():
 @app.route('/pic')
 def search_pic():
     query = request.args.get('query')
-    page = request.args.get('page', 1)
+    page = int(request.args.get('page', 1))
     return {
         'status': 'success',
         'results': spider.search_pic(query, page)
@@ -40,7 +40,7 @@ def search_pic():
 @app.route('/zhidao')
 def search_zhidao():
     query = request.args.get('query')
-    page = request.args.get('page', 1)
+    page = int(request.args.get('page', 1))
     return {
         'status': 'success',
         'results': spider.search_zhidao(query, page)
@@ -50,7 +50,7 @@ def search_zhidao():
 @app.route('/video')
 def search_video():
     query = request.args.get('query')
-    page = request.args.get('page', 1)
+    page = int(request.args.get('page', 1))
     return {
         'status': 'success',
         'results': spider.search_video(query, page)
@@ -60,7 +60,7 @@ def search_video():
 @app.route('/news')
 def search_news():
     query = request.args.get('query')
-    page = request.args.get('page', 1)
+    page = int(request.args.get('page', 1))
     return {
         'status': 'success',
         'results': spider.search_news(query, page)
@@ -70,7 +70,7 @@ def search_news():
 @app.route('/wenku')
 def search_wenku():
     query = request.args.get('query')
-    page = request.args.get('page', 1)
+    page = int(request.args.get('page', 1))
     return {
         'status': 'success',
         'results': spider.search_wenku(query, page)
@@ -80,7 +80,7 @@ def search_wenku():
 @app.route('/jingyan')
 def search_jingyan():
     query = request.args.get('query')
-    page = request.args.get('page', 1)
+    page = int(request.args.get('page', 1))
     return {
         'status': 'success',
         'results': spider.search_jingyan(query, page)
