@@ -21,9 +21,11 @@ spider = BaiduSpider()
 def search_web():
     query = request.args.get('query')
     page = int(request.args.get('page', 1))
+    result = spider.search_web(query, page)
     return {
         'status': 'success',
-        'results': spider.search_web(query, page)
+        'results': result.plain,
+        'pages': result.pages
     }
 
 
@@ -31,9 +33,11 @@ def search_web():
 def search_pic():
     query = request.args.get('query')
     page = int(request.args.get('page', 1))
+    result = spider.search_pic(query, page)
     return {
         'status': 'success',
-        'results': spider.search_pic(query, page)
+        'results': result.plain,
+        'pages': result.pages
     }
 
 
@@ -41,9 +45,11 @@ def search_pic():
 def search_zhidao():
     query = request.args.get('query')
     page = int(request.args.get('page', 1))
+    result = spider.search_zhidao(query, page)
     return {
         'status': 'success',
-        'results': spider.search_zhidao(query, page)
+        'results': result.plain,
+        'pages': result.pages
     }
 
 
@@ -51,9 +57,11 @@ def search_zhidao():
 def search_video():
     query = request.args.get('query')
     page = int(request.args.get('page', 1))
+    result = spider.search_video(query, page)
     return {
         'status': 'success',
-        'results': spider.search_video(query, page)
+        'results': result.plain,
+        'pages': result.pages
     }
 
 
@@ -61,9 +69,11 @@ def search_video():
 def search_news():
     query = request.args.get('query')
     page = int(request.args.get('page', 1))
+    result = spider.search_news(query, page)
     return {
         'status': 'success',
-        'results': spider.search_news(query, page)
+        'results': result.plain,
+        'pages': result.pages
     }
 
 
@@ -71,9 +81,11 @@ def search_news():
 def search_wenku():
     query = request.args.get('query')
     page = int(request.args.get('page', 1))
+    result = spider.search_wenku(query, page)
     return {
         'status': 'success',
-        'results': spider.search_wenku(query, page)
+        'results': result.plain,
+        'pages': result.pages
     }
 
 
@@ -81,9 +93,11 @@ def search_wenku():
 def search_jingyan():
     query = request.args.get('query')
     page = int(request.args.get('page', 1))
+    result = spider.search_jingyan(query, page)
     return {
         'status': 'success',
-        'results': spider.search_jingyan(query, page)
+        'results': result.plain,
+        'pages': result.pages
     }
 
 
@@ -92,7 +106,7 @@ def search_baike():
     query = request.args.get('query')
     return {
         'status': 'success',
-        'results': spider.search_baike(query)
+        'results': spider.search_baike(query).plain
     }
 
 
